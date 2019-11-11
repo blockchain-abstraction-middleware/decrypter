@@ -30,26 +30,23 @@ Get the fingerprint of the key
 gpg --list-keys
 ```
 
-Export secret key to an application specific location
-```shell
-gpg --export-secret-keys <fingerprint> > ~/.gnupg/secring.gpg
-gpg --export <fingerprint> > ~/.gnupg/pubring.gpg 
-```
-
 ---
 
 ### Sharing keys
 
 To export keys
 ```shell
-gpg --output pubring.gpg --armor --export <fingerprint>
 gpg --output secring.gpg --armor --export-secret-key <fingerprint>
 ```
 
 To import keys
 ```shell
-gpg --import ./pubring.gpg
 gpg --allow-secret-key-import --import ./secring.gpg
+```
+
+To delete keys
+```shell
+gpg --delete-secret-key <fingerprint>
 ```
 
 ---
@@ -60,8 +57,10 @@ gpg --allow-secret-key-import --import ./secring.gpg
 
 Encrypt a file with sops
 ```shell
-sops -pgp <fingerprint> -e config/review.yml
+sops -pgp <fingerprint> -e cmd/decrypt/config/review.yml
 ```
+
+*Take the output of the command above an paste it into config/review.yml*
 
 #### To Run
 
@@ -72,7 +71,7 @@ cd cmd/decrypt && go run main.go
 
 #### Decryption
 
-Encrypt a file with sops
+Decrypt a file with sops
 ```shell
-sops -d config/review.yml
+sops -d cmd/decrypt/config/review.yml
 ```

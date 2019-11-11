@@ -1,4 +1,4 @@
 environment: review
-name: review
+name: test
 port: 3000
 metrics: false

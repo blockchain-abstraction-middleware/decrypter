@@ -34,8 +34,8 @@ func main() {
 		return
 	}
 
-	fmt.Println("Environmnent:", config.Environment)
-	fmt.Println("Name:", config.Name)
-	fmt.Println("Port:", config.Port)
-	fmt.Println("Metrics:", config.Metrics)
+	fmt.Println("environment:", config.Environment)
+	fmt.Println("name:", config.Name)
+	fmt.Println("port:", config.Port)
+	fmt.Println("metrics:", config.Metrics)
 }
