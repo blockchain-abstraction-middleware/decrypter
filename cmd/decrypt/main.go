@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/blockchain-abstraction-middleware/encrypt/decrypt"
+	"github.com/blockchain-abstraction-middleware/decrypter/decrypt"
 	"gopkg.in/yaml.v2"
 )
 
